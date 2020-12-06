@@ -1,5 +1,22 @@
 const fs = require("fs");
 
+let listarArchivo = async (base, limite = 10) => {
+  try {
+    let data = "";
+
+    if (isNaN(base)) {
+      throw console.error("no es un numero");
+    }
+
+    for (let i = 0; i <= limite; i++) {
+      data += `${base} * ${i} = ${base * i}\n`;
+    }
+    return console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 let crearArchivo = async (base) => {
   try {
     let data = "";
@@ -28,4 +45,5 @@ let crearArchivo = async (base) => {
 
 module.exports = {
   crearArchivo,
+  listarArchivo,
 };
