@@ -17,7 +17,7 @@ let listarArchivo = async (base, limite = 10) => {
   }
 };
 
-let crearArchivo = async (base) => {
+let crearArchivo = async (base, limite = 10) => {
   try {
     let data = "";
 
@@ -25,7 +25,7 @@ let crearArchivo = async (base) => {
       throw console.error("no es un numero");
     }
 
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= limite; i++) {
       data += `${base} * ${i} = ${base * i}\n`;
     }
 

@@ -10,6 +10,16 @@ const argv = require("yargs")
       default: 10,
     },
   })
+  .command("crear", "crea el resultado", {
+    base: {
+      demand: true,
+      alias: "b",
+    },
+    limite: {
+      alias: "l",
+      default: 10,
+    },
+  })
   .help().argv;
 
 let base = process.argv[2];
@@ -22,8 +32,7 @@ switch (comando) {
     listarArchivo(argv.base, argv.limite);
     break;
   case "crear":
-    console.log("crear");
-    crearArchivo(argv.base);
+    crearArchivo(argv.base, argv.limite);
     break;
 
   default:
